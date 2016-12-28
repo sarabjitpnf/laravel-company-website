@@ -5,7 +5,7 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="author" content="Sarbjit Singh" />
 <!-- Document Title -->
-<title>Infinity | Company Website Portfolio</title>
+<title>Company Portfolio - @yield('title')</title>
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -18,17 +18,17 @@
 
 <!-- StyleSheets -->
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="{{asset('css/bootstrap/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+<link rel="stylesheet" href="{{asset('css/main.css')}}">
+<link rel="stylesheet" href="{{asset('css/style.css')}}">
+<link rel="stylesheet" href="{{asset('css/responsive.css')}}">
 
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="{{asset('rs-plugin/css/settings.css')}}" media="screen" />
 
 <!-- JavaScripts -->
-<script src="js/vendors/modernizr.js"></script>
+<script src="{{asset('js/vendors/modernizr.js')}}"></script>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -86,12 +86,12 @@
         <!-- Nav -->
         <nav>
           <ul id="ownmenu" class="ownmenu">
-            <li class="active"><a href="index.html">HOME</a></li>
-            <li><a href="about.html"> ABOUT </a></li>
-            <li><a href="services.html"> SERVICES </a></li>
-            <li><a href="case-studies.html"> PORTFOLIO </a></li>            
-            <li><a href="blog.html"> BLOG </a></li>
-            <li><a href="contact.html"> CONTACT</a></li>            
+            <li class="active"><a href="{{url('/')}}">HOME</a></li>
+            <li><a href="{{url('/about')}}"> ABOUT </a></li>
+            <li><a href="{{url('/services')}}"> SERVICES </a></li>
+            <li><a href="{{url('/portfolio')}}"> PORTFOLIO </a></li>            
+            <li><a href="{{url('/blog')}}"> BLOG </a></li>
+            <li><a href="{{url('/contact')}}"> CONTACT</a></li>            
           </ul>
         </nav>
       </div>
@@ -194,18 +194,20 @@
 </div>
 <!-- End Page Wrapper --> 
 
-<!-- JavaScripts --> 
-<script src="js/vendors/jquery/jquery.min.js"></script> 
-<script src="js/vendors/bootstrap.min.js"></script> 
-<script src="js/vendors/own-menu.js"></script> 
-<script src="js/vendors/flexslider/jquery.flexslider-min.js"></script> 
-<script src="js/vendors/jquery.isotope.min.js"></script> 
-<script src="js/vendors/owl.carousel.min.js"></script> 
-<script src="js/vendors/jquery.sticky.js"></script>
+<!-- JavaScripts --> ')}}
+<script src="{{asset('js/vendors/jquery/jquery.min.js')}}"></script> 
+<script src="{{asset('js/vendors/bootstrap.min.js')}}"></script> 
+<script src="{{asset('js/vendors/own-menu.js')}}"></script> 
+<script src="{{asset('js/vendors/flexslider/jquery.flexslider-min.js')}}"></script> 
+<script src="{{asset('js/vendors/jquery.isotope.min.js')}}"></script> 
+<script src="{{asset('js/vendors/owl.carousel.min.js')}}"></script> 
+<script src="{{asset('js/vendors/jquery.sticky.js')}}"></script>
 
+@if($controller=="HomeController" and $action=="index")
 <!-- SLIDER REVOLUTION 4.x SCRIPTS  --> 
-<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.tools.min.js"></script> 
-<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script> 
-<script src="js/main.js"></script>
+<script type="text/javascript" src="{{asset('rs-plugin/js/jquery.themepunch.tools.min.js')}}"></script> 
+<script type="text/javascript" src="{{asset('rs-plugin/js/jquery.themepunch.revolution.min.js')}}"></script> 
+@endif
+<script src="{{asset('js/main.js')}}"></script>
 </body>
 </html>

@@ -1,4 +1,6 @@
 @extends('layouts.frontend')
+@section('title', 'Home')
+
 @section('content')
 <!--======= HOME MAIN SLIDER =========-->
   <section class="home-slider">
